@@ -12,13 +12,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
 
-    [SerializeField] Vector3 offset = new Vector3(0, 5, -7);
-
-    void Start()
-    {
-        transform.position = car.transform.position = offset;
-    }
-    void LateUpdate()
+    void FixedUpdate()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
