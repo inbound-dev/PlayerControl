@@ -321,6 +321,7 @@
 "Assets/Scenes/FollowPlayer.cs"
 "Assets/Scenes/PlayerController.cs"
 "Assets/Scenes/Speedometer.cs"
+"Assets/Scenes/Tachometer.cs"
 -langversion:8.0
 
 /deterministic
