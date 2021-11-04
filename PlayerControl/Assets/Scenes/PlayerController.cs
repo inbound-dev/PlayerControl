@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput; 
 
+    [SerializeField] List<WheelCollider> allWheels;
+    [SerializeField] int wheelsOnGround;
+
     void Start(){
         PlayerRB = GetComponent<Rigidbody>();
         centerOfMass.transform.position = centerOfMass.transform.position;
@@ -23,10 +26,27 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
+        if(IsOnGround()){
+            horizontalInput = Input.GetAxis("Horizontal");
+            forwardInput = Input.GetAxis("Vertical");
         
-        PlayerRB.AddRelativeForce(Vector3.forward *  forwardInput * horsePower);
-        car.transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
+            PlayerRB.AddRelativeForce(Vector3.forward *  forwardInput * horsePower);
+            car.transform.Rotate(Vector3.up * Time.deltaTime * turnSpeed * horizontalInput);
+        }
+    }
+
+    bool IsOnGround(){
+        wheelsOnGround = 0;
+        foreach(WheelCollider wheel in allWheels){
+            if(wheel.isGrounded){
+                wheelsOnGround++;
+            }
+        }
+        if(wheelsOnGround >= 4){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
