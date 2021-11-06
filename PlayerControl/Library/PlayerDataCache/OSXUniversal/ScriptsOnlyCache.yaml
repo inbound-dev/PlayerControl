@@ -96,6 +96,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
+    - Class: 146
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
@@ -904,4 +906,4 @@ ScriptsOnlyBuild:
   platform: 2
   scenePathNames:
   - Assets/Scenes/Prototype 1.unity
-  playerPath: /Users/Jordan/Documents/Builds/CarGame.app
+  playerPath: /Users/Jordan/Documents/GitHub/CarGame.app
