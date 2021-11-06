@@ -904,4 +904,4 @@ ScriptsOnlyBuild:
   platform: 2
   scenePathNames:
   - Assets/Scenes/Prototype 1.unity
-  playerPath: /Users/Jordan/Documents/Builds
+  playerPath: /Users/Jordan/Documents/Builds/CarGame.app

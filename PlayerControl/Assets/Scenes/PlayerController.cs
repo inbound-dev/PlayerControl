@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput; 
 
-    [SerializeField] List<WheelCollider> allWheels;
+    public List<WheelCollider> allWheels;
     [SerializeField] int wheelsOnGround;
 
     void Start(){
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(IsOnGround()){
+        if((IsOnGround()) == true){
             horizontalInput = Input.GetAxis("Horizontal");
             forwardInput = Input.GetAxis("Vertical");
         
